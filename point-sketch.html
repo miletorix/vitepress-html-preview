@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
+</head>
+<body>
+  <script>
+let particles = [];
+
+function setup() {
+  createCanvas(680, 590);
+  colorMode(HSB, 360, 100, 100, 100);
+  background(0);
+  for (let i = 0; i < 150; i++) {
+    particles.push(new OrbitalParticle());
+  }
+}
+
+function draw() {
+  background(0, 0, 0, 10); // Полупрозрачный фон для "шлейфа"
+  translate(width / 2, height / 2);
+  for (let p of particles) {
+    p.update();
+    p.display();
+  }
+}
+
+class OrbitalParticle {
+  constructor() {
+    this.angle = random(TWO_PI);
+    this.radius = random(50, 250);
+    this.speed = random(0.001, 0.01);
+    this.size = random(2, 6);
+    this.hue = random(360);
+    this.offset = random(1000);
+  }
+
+  update() {
+    this.angle += this.speed;
+  }
+
+  display() {
+    let x = cos(this.angle + this.offset) * this.radius;
+    let y = sin(this.angle + this.offset) * this.radius;
+    noStroke();
+    fill(this.hue, 80, 100, 80);
+    ellipse(x, y, this.size);
+  }
+}
+  </script>
+</body>
+</html>
