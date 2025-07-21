@@ -1,20 +1,20 @@
+---
+prev: false
+next: false
+layout: doc
+outline: [2, 3]
+sidebar: false
+---
+
 # vitepress-html-preview
 
 A Vue component for embedding external HTML files via `iframe` in VitePress. It’s useful for showcasing interactive demos with full HTML, CSS, and JavaScript support.
 
-![npm](https://img.shields.io/npm/v/@miletorix/vitepress-html-preview) ![npm](https://img.shields.io/npm/dw/@miletorix/vitepress-html-preview) ![license](https://img.shields.io/npm/l/@miletorix/vitepress-html-preview)
+![npm](https://img.shields.io/npm/v/@miletorix/vitepress-html-preview)   
+![npm](https://img.shields.io/npm/dw/@miletorix/vitepress-html-preview)   
+![license](https://img.shields.io/npm/l/@miletorix/vitepress-html-preview)
 
-<p align="center">
-  <img src="/assets/demo-1.png" alt="vitepress-enhanced-site-links demo" width="800">
-</p>
 
-## Live Demo and more information
-
-✨ See it in action:  
-👉 [https://miletorix.github.io/vitepress-html-preview/](https://miletorix.github.io/vitepress-html-preview/)
-
-📦 NPM Package:  
-👉 [https://www.npmjs.com/package/@miletorix/vitepress-html-preview](https://www.npmjs.com/package/@miletorix/vitepress-html-preview)
 
 ## Installation
 
@@ -26,8 +26,7 @@ npm i @miletorix/vitepress-html-preview
 
 ### Configuration
 
-```typescript
-// docs/.vitepress/theme/index.ts
+```typescript  [docs/.vitepress/theme/index.ts]
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 
@@ -55,10 +54,10 @@ export default {
 
 **Input:**
 
-```vue
+```vue [example.md]
 <HtmlPreview src="/demo/point-sketch.html" height="600px" />
 ```
 
 **Output:**
 
-![demo-2](./assets/demo-2.png) 
+<HtmlPreview src="point-sketch.html" height="600px"/>
