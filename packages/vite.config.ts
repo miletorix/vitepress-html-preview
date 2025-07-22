@@ -7,6 +7,7 @@ export default defineConfig({
     lib: {
       entry: 'src/index.ts',
       name: 'HtmlPreview',
+      formats: ['es', 'umd'],
       fileName: (format) => `html-preview.${format}.js`
     },
     cssCodeSplit: true,
